@@ -1,0 +1,1 @@
+ADD_LIBRARY (LinkedList_Lib ${CMAKE_CURRENT_SOURCE_DIR}/linkedList.c)
