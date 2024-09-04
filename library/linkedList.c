@@ -4,6 +4,11 @@ void addNode(Node **start, int value)
 {
     // create a new node
     Node *newNode = (Node *)malloc(sizeof(Node));
+    if (newNode == NULL)
+    {
+        printf("[%s] Error! get memory block failed.\n", __func__);
+        exit(EXIT_FAILURE);
+    }
     newNode->data = value;
 
     // if start is a NULL list (first condition)
@@ -145,7 +150,7 @@ void freeList(Node **start)
             ready_to_delete = current;
             current = current->next;
             free(ready_to_delete);
-        }while(current != *start);
+        } while (current != *start);
 
         *start = NULL;
     }
