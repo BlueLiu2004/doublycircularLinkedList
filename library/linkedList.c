@@ -78,6 +78,7 @@ void deleteNode(Node **start, int value)
     // if *start has only one node
     else if ((*start)->next == (*start) && (*start)->prev == *start)
     {
+        free(*start);
         *start = NULL;
     }
     else
